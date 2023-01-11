@@ -21,18 +21,18 @@ API to a backed model.
 
 The REST API to the example app is described below.
 
-## Get list of Things
+## Get the customer rewards by customer name
 
 ### Request
 
-`GET /rewards/customerId`
+`GET /rewards/customername`
 
-    curl -i -H 'Accept: application/json' http://localhost:8080/rewards/
+    curl -i -H 'Accept: application/json' http://localhost:8080/rewards/{customername}
 
 ### Response
 
     HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
+    Date: Wed, 11 Jan 2022 12:00:30 GMT
     Status: 200 OK
     Connection: close
     Content-Type: application/json
@@ -41,12 +41,13 @@ The REST API to the example app is described below.
     
 
 
+## Create  Reward Calculator Using Post Method
 ### Request
 
 `POST /rewards/
 
     curl -i -H 'Accept: application/json' -d  http://localhost:8080/rewards
-###Request
+###Sample Request Body
   {
   "customerName":"Bob",
   "amount":"150",
@@ -54,10 +55,10 @@ The REST API to the example app is described below.
 
 
  }
-### Response
+###Sample Response Body
 
     HTTP/1.1 201 Created
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
+    Date: Wed, 11 Jan 2022 12:36:30 GMT
     Status: 201 Created
     Connection: close
     Content-Type: application/json
